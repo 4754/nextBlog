@@ -10,7 +10,7 @@ export const metadata = {
 };
 
 async function getData() {
-  const res = await fetch("http://localhost:3000/api/posts", { cache: 'no-store' });
+  const res = await fetch(process.env.NEXTAUTH_URL+"/api/posts", { cache: 'no-store' });
   // console.log(res);
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
