@@ -30,7 +30,7 @@ export const POST = async (req) => {
         // console.log(posts)
         return new NextResponse("Post has been created", {status: 201});
     } catch (error) {
-        return new NextResponse("Error", {status: 500})
+        return new NextResponse(error, {status: 500})
     }
     
 }

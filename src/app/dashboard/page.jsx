@@ -61,6 +61,7 @@ const Dashboard = () => {
     const content = e.target[3].value;
 
     try {
+      console.log("try to post")
       await fetch("/api/posts", {
         method: "POST",
         body: JSON.stringify({
