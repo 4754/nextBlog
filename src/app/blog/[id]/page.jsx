@@ -3,13 +3,14 @@ import styles from './page.module.css'
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-export async function generateMetadata({ params }) {
-    const post = await getData(params.id)
-    return {
-      title: `Blogia||Blog||${post.title}`,
-      description: post.desc,
-    }
-  }
+
+// export async function generateMetadata({ params }) {
+//     const post = await getData(params.id)
+//     return {
+//       title: `Blogia||Blog||${post.title}`,
+//       description: post.desc,
+//     }
+//   }
 
 async function getData(id) {
     const res = await fetch(process.env.NEXTAUTH_URL+`/api/posts/${id}`, { cache: 'no-store' });
